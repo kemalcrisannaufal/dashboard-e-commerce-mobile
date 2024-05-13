@@ -13,7 +13,7 @@ class SubsectionTitleView extends GetView {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          "Category",
+          title,
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
