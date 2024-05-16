@@ -19,9 +19,10 @@ class CarrouselCardView extends GetView {
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Up to 30% Offer!",
+                  "Diskon 50% Hari Ini",
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.green,
@@ -29,7 +30,7 @@ class CarrouselCardView extends GetView {
                   ),
                 ),
                 Text(
-                  "Enjoy our big offer of every day",
+                  "Setiap hari ada promo menarik",
                   style: TextStyle(
                     fontSize: 15,
                   ),

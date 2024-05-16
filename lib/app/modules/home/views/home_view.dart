@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
+import 'package:my_tel_u_clone/app/modules/home/views/card_discount_view.dart';
 import 'package:my_tel_u_clone/app/modules/home/views/carrousel_card_view.dart';
 import 'package:my_tel_u_clone/app/modules/home/views/category_menu_view.dart';
 import 'package:my_tel_u_clone/app/modules/home/views/subsection_title_view.dart';
 import 'package:my_tel_u_clone/app/shared/widgets/appbar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import '../../../data/produk.dart';
+
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -91,7 +94,25 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               SubsectionTitleView(title: "Diskon Hari Ini", onPressed: () {}),
-              
+              Container(
+                height: 220,
+                decoration: BoxDecoration(
+                  color: Colors.green[100],
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: Produk.imagePath.length,
+                  itemBuilder: (context, index) {
+                    return CardDiscountView(
+                      image: Produk.imagePath[index],
+                      title: Produk.productName[index],
+                      price: Produk.price[index],
+                      cashback: Produk.cashback[index],
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ));
