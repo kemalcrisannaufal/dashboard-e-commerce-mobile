@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:my_tel_u_clone/app/routes/app_pages.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -47,12 +49,24 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leadingWidth: 300,
       centerTitle: true,
       actions: [
-        IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.notifications,
+        GestureDetector(
+          onTap: () => Get.toNamed(Routes.PROFILE),
+          child: Container(
+            margin: EdgeInsets.only(right: 15),
+            child: CircleAvatar(
+              radius: 30,
+              backgroundImage: AssetImage(
+                'assets/images/profile.jpg',
+              ),
+            ),
           ),
         )
+        // IconButton(
+        //   onPressed: () {},
+        //   icon: Icon(
+        //     Icons.notifications,
+        //   ),
+        // )
       ],
     );
   }

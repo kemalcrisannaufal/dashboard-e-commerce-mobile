@@ -14,7 +14,7 @@ class CategoryMenuView extends GetView {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         height: 90,
         width: 80,
